@@ -18,8 +18,12 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var handler = require('./handler/handler');
-handler.handle(app);
+// S :: Routing
+var routes = require('./routes/');
+var user = require('./routes/users');
+app.use('/', routes.index);
+app.use('/users', user);
+// E :: Routing
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
