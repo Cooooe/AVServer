@@ -1,13 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+var test = require('./test');
+app.use('/', test);
 
-router.get('/', function(req, res) {
-	res.render('index', { title: 'AVSERVER' });
-});
-router.get('/login.do', function(req, res) {
-
-});
+var user = require('./users');
+app.use('/', user);
 
 module.exports = router;
