@@ -19,10 +19,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // S :: Routing
-var routes = require('./routes/');
+var routes = require('./routes');
 app.use('/', routes);
-
 // E :: Routing
+
+var query = require('./module/queryModule');
+query.fileRead();
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

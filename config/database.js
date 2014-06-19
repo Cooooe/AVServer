@@ -1,10 +1,10 @@
 function getConnData(){
 	var connData =  {
-		host : 'localhost',
+		host : '222.111.30.154',
 		port : 3306,
-		user : 'root',
-		password : 'apmsetup',
-		database : 'node',
+		user : 'avsuser',
+		password : 'avs123#',
+		database : 'avsuser',
 		connectionLimit : 20,
 		waitForConnections : false
 	};
