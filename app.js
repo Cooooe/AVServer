@@ -27,6 +27,19 @@ app.use('/', routes);
 var query = require('./module/queryModule');
 query.fileRead();
 
+var db = require('./module/connecter');
+var conn = db.getConn();
+
+conn.query("SELECT 1", function(err,rows){
+    if(err){
+        console.log("err : ", err);
+    }
+    console.log(rows);
+    conn.destroy();
+});
+
+
+
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
