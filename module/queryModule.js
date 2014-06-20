@@ -4,18 +4,9 @@ var async = require('async');
 var xml_digester = require("xml-digester");
 var digester = xml_digester.XmlDigester({});
 
-
-
-//var db = mysql.createConnection({
-//	user : 'avsuser',
-//	password : 'avs123',
-//    database : 'avsuser'
-//});
-
+global.querys = {};
 
 exports.fileRead = function(){
-
-    global.querys = {};
 
     var sqlDir = '../sql';
 

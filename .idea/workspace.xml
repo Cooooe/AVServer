@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99cf1a79-7367-4df4-8141-29a419c8403a" name="Default" comment="쿼리모듈 async화">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/queryModule.js" afterPath="$PROJECT_DIR$/module/queryModule.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AVServer.iws" />
@@ -38,8 +39,8 @@
       <file leaf-file-name="queryModule.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module/queryModule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34545454" vertical-offset="0" max-vertical-offset="1672">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6111888" vertical-offset="0" max-vertical-offset="1501">
+              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -360,7 +361,11 @@
       <created>1403242701184</created>
       <updated>1403242701184</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="쿼리모듈 async화">
+      <created>1403242962402</created>
+      <updated>1403242962402</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -791,8 +796,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module/queryModule.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34545454" vertical-offset="0" max-vertical-offset="1672">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6111888" vertical-offset="0" max-vertical-offset="1501">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
           <folding />
         </state>
       </provider>
