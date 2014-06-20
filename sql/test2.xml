@@ -1,4 +1,4 @@
-<querys namespace="select">
+<querys namespace="test2">
     <query id="tmp">test!!!</query>
     <query id="test">test2222</query>
 </querys>
