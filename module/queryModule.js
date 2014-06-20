@@ -14,37 +14,37 @@ exports.fileRead = function(){
 
         //check directory
         function(callback){
-            fs.readdir(sqlDir, function(err, data){
+            fs.readdir(sqlDir, function(err, dir){
                 if(err){
                     console.log('[ERROR_DIR] >> ' + err)
                 }
                 else{
                     console.log("check dir");
-                    console.log(data);
-                    callback(null, data);
+                    console.log(dir);
+                    callback(null, dir);
                 }
             });
         },
 
         //read file
-        function(data, callback){
-            for(var i=0; i<data.length; i++){
-                fs.readFile(sqlDir + '/' + data[i], 'utf8', function (err, data) {
+        function(dir, callback){
+            for(var i=0; i<dir.length; i++){
+                fs.readFile(sqlDir + '/' + dir[i], 'utf8', function (err, file) {
                     if (err){
                         console.log('[ERROR_FILE] >> ' + err);
                     }
                     else{
                         console.log("check file ");
-                        console.log(data);
-                        callback(null, data);
+                        console.log(file);
+                        callback(null, file);
                     }
                 });
             }
         },
 
         //digest xml
-        function(data, callback){
-            digester.digest(data, function (err, result) {
+        function(file, callback){
+            digester.digest(file, function (err, result) {
                 if (err){
                     console.log('[ERROR_XML_PARSING] >> ' + err);
                 }
