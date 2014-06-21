@@ -1,4 +1,4 @@
 <querys namespace="test1">
-    <query id="tmp">test!!!</query>
+    <query id="users">select * from USERS</query>
     <query id="test">test1111</query>
 </querys>

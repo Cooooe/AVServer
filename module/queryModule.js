@@ -7,11 +7,8 @@ var digester = xml_digester.XmlDigester({});
 global.querys = {};
 
 exports.fileRead = function(){
-
     var sqlDir = '../sql';
-
     async.waterfall([
-
         //check directory
         function(callback){
             fs.readdir(sqlDir, function(err, dir){
@@ -59,8 +56,8 @@ exports.fileRead = function(){
 
     function(err, result){
         if(err) console.log('err : ', err);
-        console.log('----> final result <----');
-        console.log('result : ',result);
+        //console.log('----> final result <----');
+        //console.log('result : ',result);
     }
     );
 }
