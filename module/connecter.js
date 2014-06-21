@@ -22,16 +22,11 @@ getConn = function(){
 
 exports.select = function(sql, param, callback){
     var conn = getConn();
-    async.waterfall([
-            function(fin){
-                conn.query(sql, param, function(err, result){
-                    if(err) console.log('[ERROR_SQL] >> ' + err);
-
-                });
-            }
-        ],
-        function fin(err, result){
-
-    })
+    conn.query(sql, param, function(err, result){
+        if(err) console.log('[ERROR_SQL] >> ' + err);
+        else {
+            callback(result);
+        }
+    });
 
 };
