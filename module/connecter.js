@@ -28,5 +28,8 @@ exports.select = function(sql, param, callback){
             callback(result);
         }
     });
-
 };
+
+exports.excute = function(sql, param, callback){
+
+}

@@ -2,14 +2,15 @@ var express = require('express');
 var router = express.Router();
 
  router.get('/', function(req, res) {
-
-     db.select(querys.test1. users, function(test){
-         console.log(">>" + test)
-     });
- res.render('index', { title: 'TESTSERVER' });
+     res.render('index', '');
  });
 
  router.get('/login.do', function(req, res) {
+     var reqParam = req.param();
+    console.log(reqParam);
+     db.select(querys.test1.users, ['admin', 'N'], function(data){
+         res.send(data);
+     });
  });
 
 module.exports = router;
