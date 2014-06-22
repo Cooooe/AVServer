@@ -1,5 +1,6 @@
 <querys namespace="user">
     <query id="join">
-        
+        INSERT INTO USERS(ACCOUNT, PASSWORD, REG_DATE, MAIL_YN, IP) VALUES(?, ?, NOW(), ?, ?)
     </query>
+    <query id="test">test1111</query>
 </querys>

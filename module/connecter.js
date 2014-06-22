@@ -23,7 +23,7 @@ getConn = function(){
 exports.select = function(sql, param, callback){
     var conn = getConn();
     conn.query(sql, param, function(err, result){
-        if(err) console.log('[ERROR_SQL] >> ' + err);
+        if(err) console.log('[ERROR_SQL_SELECT] >> ' + err);
         else {
             callback(result);
         }
@@ -31,5 +31,11 @@ exports.select = function(sql, param, callback){
 };
 
 exports.excute = function(sql, param, callback){
-
+    var conn = getConn();
+    conn.query(sql, param, function(err, result){
+       if(err)  console.error('[ERROR_SQL_EXCUTE] >> ' + err)
+        else {
+           callback(result);
+       }
+    });
 }

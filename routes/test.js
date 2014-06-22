@@ -6,8 +6,7 @@ var router = express.Router();
  });
 
  router.get('/login.do', function(req, res) {
-     var reqParam = req.param();
-    console.log(reqParam);
+     console.log(req._remoteAddress);
      db.select(querys.test1.users, ['admin', 'N'], function(data){
          res.send(data);
      });
