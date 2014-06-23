@@ -2,7 +2,7 @@
  * Created by ohu on 14. 6. 20.
  */
 var mysql = require('mysql');
-var async = require('async');
+//var async = require('async');
 
 var mysqlConf =
     {
@@ -30,12 +30,18 @@ exports.select = function(sql, param, callback){
     });
 };
 
-exports.excute = function(sql, param, callback){
+exports.execute = function(sql, param, callback){
     var conn = getConn();
     conn.query(sql, param, function(err, result){
-       if(err)  console.error('[ERROR_SQL_EXCUTE] >> ' + err)
-        else {
+       if(err) {
+           console.error('[ERROR_SQL_EXCUTE] >> ' + err);
+           result['flag'] = false;
+           callback(result);
+       }
+       else {
+           result['flag'] = true;
            callback(result);
        }
     });
 }
+

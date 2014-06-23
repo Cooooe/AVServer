@@ -7,8 +7,9 @@ var router = express.Router();
 
  router.get('/login.do', function(req, res) {
      console.log(req._remoteAddress);
-     db.select(querys.test1.users, ['admin', 'N'], function(data){
+     global.db.execute("SELECT * from USERS", null, function(data){
          res.send(data);
+         console.log(data);
      });
  });
 
