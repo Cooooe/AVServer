@@ -8,8 +8,6 @@ var db = require('../module/connecter');
 //test
 exports.test = function(callback, param) {
     db.execute(querys.test.test1, param, function (data) {
-            //console.log(data);
             callback(data);
-        }
-    );
+    });
 }

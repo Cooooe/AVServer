@@ -45,14 +45,10 @@ exports.fileRead = function(){
                     var namespace = result.querys.namespace;
                     global.querys[namespace] = {};
                     if(result.querys.query.length == undefined){
-                        //console.log(namespace);
-                        //console.log(result.querys.query.id);
-                        //console.log(result.querys.query._text);
                         global.querys[namespace][result.querys.query.id] = result.querys.query._text;
                     }
                     else{
                         for (var j = 0; j < result.querys.query.length; j++) {
-                            //console.log(result.querys.query[j]._text);
                             global.querys[namespace][result.querys.query[j].id] = result.querys.query[j]._text;
                         }
                     }
@@ -66,8 +62,6 @@ exports.fileRead = function(){
 
     function(err, result){
         if(err) console.log('err : ', err);
-        //console.log('----> final result <----');
-        //console.log('result : ',result);
     }
     );
 }

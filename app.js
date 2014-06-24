@@ -24,7 +24,7 @@ app.use('/', routes);
 // E :: Routing
 
 
-var query = require('./module/queryModule');
+var query = require('./module/query-parser');
 query.fileRead();
 
 
