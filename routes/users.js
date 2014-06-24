@@ -9,7 +9,7 @@ router.get('/join.av', function(req, res) {
     var id = req.param('USER_ID');
     var pass = encry.encrypt(req.param('USER_PASS'));
     var mailYN = req.param('MAIL_YN');
-    db.exec(querys.user.join, [id, pass, mailYN, ip], function(data){
+    db.execute(querys.user.join, [id, pass, mailYN, ip], function(data){
         console.log(data);
     });
 });

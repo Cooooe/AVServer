@@ -1,0 +1,5 @@
+<querys namespace="test">
+    <query id="test1">
+        SELECT _ID, ACCOUNT FROM USERS
+    </query>
+</querys>

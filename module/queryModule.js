@@ -57,7 +57,7 @@ exports.fileRead = function(){
     function(err, result){
         if(err) console.log('err : ', err);
         //console.log('----> final result <----');
-        //console.log('result : ',result);
+        console.log('result : ',result);
     }
     );
 }

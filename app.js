@@ -27,7 +27,8 @@ app.use('/', routes);
 var query = require('./module/queryModule');
 query.fileRead();
 
-global.db = require('./module/connecter');
+
+//global.db = require('./module/connecter');
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

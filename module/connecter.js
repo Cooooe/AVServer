@@ -23,8 +23,13 @@ getConn = function(){
 exports.select = function(sql, param, callback){
     var conn = getConn();
     conn.query(sql, param, function(err, result){
-        if(err) console.log('[ERROR_SQL_SELECT] >> ' + err);
+        if(err) {
+            result['flag'] = false;
+            console.log('[ERROR_SQL_SELECT] >> ' + err);
+            callback(result);
+        }
         else {
+            result['flag'] = true;
             callback(result);
         }
     });
