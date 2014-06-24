@@ -13,7 +13,8 @@
     "mysql": "^2.3.2",
     "xml-digester": "^0.0.5",
     "static-favicon": "^1.0.2",
-    "async" : "*"
+    "async" : "*",
+    "winston" : "*"
   },
   "devDependencies": {},
   "scripts": {

@@ -4,6 +4,7 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var avs = require('./module/logger');
 
 var app = express();
 global.app = app;
@@ -25,7 +26,9 @@ app.use('/', routes);
 
 
 var query = require('./module/query-parser');
-query.fileRead();
+query.parse();
+avs.info('log to file');
+
 
 
 //global.db = require('./module/connecter');

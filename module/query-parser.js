@@ -6,7 +6,7 @@ var digester = xml_digester.XmlDigester({});
 
 global.querys = {};
 
-exports.fileRead = function(){
+exports.parse = function(){
     var sqlDir = '../sql';
     async.waterfall([
         //check directory
