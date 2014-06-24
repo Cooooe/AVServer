@@ -8,8 +8,11 @@ router.get('/', function(req, res) {
 
 router.get('/login.do', function(req, res) {
     console.log(req._remoteAddress);
-    console.log("----------------");
-    testDAO.test();
+    testDAO.test(function(data){
+            console.log(data);
+            res.send(data);
+        }
+    );
 //    global.db.execute("SELECT * from USERS", null, function(data){
 //        res.send(data);
 //        console.log(data);
