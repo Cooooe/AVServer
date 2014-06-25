@@ -6,7 +6,7 @@ router.get('/', function(req, res) {
     res.render('index', '');
 });
 
-router.get('/login.do', function(req, res) {
+router.post('/login.do', function(req, res) {
     console.log(req._remoteAddress);
     testDAO.test(function(data){
             console.log(data);

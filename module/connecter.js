@@ -22,10 +22,12 @@ getConn = function(){
 
 exports.select = function(sql, param, callback){
     var conn = getConn();
+    avs.log('debug', '[QUERY_SELECT] >> ' + sql);
     conn.query(sql, param, function(err, result){
         if(err) {
             result['flag'] = false;
-            console.log('[ERROR_SQL_SELECT] >> ' + err);
+            avs.log('warn', '[ERROR_SELECT] >> ' + err);
+            //console.error('[ERROR_SQL_SELECT] >> ' + err);
             callback(result);
         }
         else {
@@ -37,9 +39,11 @@ exports.select = function(sql, param, callback){
 
 exports.execute = function(sql, param, callback){
     var conn = getConn();
+    avs.log('debug', '[QUERY_SELECT] >> ' + sql);
     conn.query(sql, param, function(err, result){
        if(err) {
-           console.error('[ERROR_SQL_EXCUTE] >> ' + err);
+           avs.log('warn', '[ERROR_SELECT] >> ' + err);
+           //console.error('[ERROR_SQL_EXCUTE] >> ' + err);
            result['flag'] = false;
            callback(result);
        }

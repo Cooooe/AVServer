@@ -4,10 +4,10 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var avs = require('./module/logger');
 
 var app = express();
 global.app = app;
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -27,11 +27,15 @@ app.use('/', routes);
 
 var query = require('./module/query-parser');
 query.parse();
-avs.info('log to file');
 
+/* Custom Global Variable */
+global.avs = require('./module/logger');
+global.db = require('./module/connecter');
 
-
-//global.db = require('./module/connecter');
+app.use(function(req, res, next){
+    avs.log('info', req._remoteAddress + " >> " + req.url)
+    next();
+});
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
