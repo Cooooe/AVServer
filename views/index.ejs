@@ -6,15 +6,21 @@
 	<script src="/javascripts/jquery-2.1.1.min.js"></script>
 	  <script>
 		  function test(){
-				$.get('/login.do',"" , function(data){
+				$.post('/login.do',"" , function(data){
 					console.log(data);
 				});
 		  }
+          function test1(){
+              $.post('/login1.do',"" , function(data){
+                  console.log(data);
+              });
+          }
 	  </script>
   </head>
   <body>
     <h1></h1>
     <p></p>
   	<input type="button" id="bt" onclick="test();" />
+    <input type="button" id="bt" onclick="test1();" />
   </body>
 </html>

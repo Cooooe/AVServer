@@ -7,16 +7,16 @@ router.get('/', function(req, res) {
 });
 
 router.post('/login.do', function(req, res) {
-    console.log(req._remoteAddress);
-    testDAO.test(function(data){
-            console.log(data);
-            res.send(data);
-        }
-    );
-//    global.db.execute("SELECT * from USERS", null, function(data){
-//        res.send(data);
-//        console.log(data);
-//    });
+    req.session.aa = 'test';
+    console.log(req.session.aa);
+    //testDAO.test(function(data){
+    //        console.log(data);
+    //        res.send(data);
+    //    }
+    //);
+});
+router.post('/login1.do', function(req, res) {
+    console.log(req.session.aa);
 });
 
 module.exports = router;

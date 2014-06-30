@@ -4,17 +4,18 @@
   "description": "AVServer\r ============== URL 정보 ==============\r 1. 로그인 페이지 : /\r  -> 리턴정보 : {title}\r 2. 로그인 결과 : /login.av\r  -> 입력값 : id, password\r  -> 리턴정보정상 : {auth} -> Session Info {USER_NM, USER_ID}\r  -> 리턴정보에러 : {errCode(String), errName(String)}\r 3. 게시판 리스트 : /AvBoard/list.av\r 4. 게시판 글쓰기 : /AvBoard/write.av\r 5. 게시판 글삭제 : /AvBoard/delete.av\r 6. 게시판 글수정 : /AvBoard/update.av\r 7. 게시판 업로드 : /AvBoard/uploading.av",
   "main": "app.js",
   "dependencies": {
+    "async": "*",
     "body-parser": "^1.0.2",
+    "cookie-parser": "^1.0.1",
     "debug": "^0.7.4",
     "ejs": "^0.8.8",
-    "cookie-parser": "^1.0.1",
-    "morgan": "^1.0.1",
     "express": "^4.2.0",
+    "express-session": "^1.6.1",
+    "morgan": "^1.0.1",
     "mysql": "^2.3.2",
-    "xml-digester": "^0.0.5",
     "static-favicon": "^1.0.2",
-    "async" : "*",
-    "winston" : "*"
+    "winston": "*",
+    "xml-digester": "^0.0.5"
   },
   "devDependencies": {},
   "scripts": {

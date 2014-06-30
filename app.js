@@ -18,12 +18,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+/* Session Test */
+app.use(require('cookie-parser')('aaaa'));
+app.use(require('express-session')({
+    secret : 'aaaa'
+}));
 
 // S :: Routing
 var routes = require('./routes');
 app.use('/', routes);
 // E :: Routing
-
 
 var query = require('./module/query-parser');
 query.parse();
@@ -32,8 +36,9 @@ query.parse();
 global.avs = require('./module/logger');
 global.db = require('./module/connecter');
 
+
 app.use(function(req, res, next){
-    avs.log('info', req._remoteAddress + " >> " + req.url)
+    avs.log('info', req._remoteAddress + " >> " + req.url);
     next();
 });
 
