@@ -15,12 +15,18 @@
                   console.log(data);
               });
           }
+          function test2(){
+              $.post('/login2.do',"" , function(data){
+                  console.log(data);
+              });
+          }
 	  </script>
   </head>
   <body>
     <h1></h1>
     <p></p>
-  	<input type="button" id="bt" onclick="test();" />
-    <input type="button" id="bt" onclick="test1();" />
+  	<input type="button" id="bt" onclick="test();" value="setSession" />
+    <input type="button" id="bt" onclick="test1();" value="getSession" />
+    <input type="button" id="bt" onclick="test2();" value="distroySession" />
   </body>
 </html>

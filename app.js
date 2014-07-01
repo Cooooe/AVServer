@@ -19,15 +19,12 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 /* Session Test */
-app.use(require('cookie-parser')('aaaa'));
-app.use(require('express-session')({
-    secret : 'aaaa'
+var session_set = require('express-session');
+var redis = require("redis");
+var client = redis.createClient();
+app.use(session_set({
+      secret: 'secret'
 }));
-
-// S :: Routing
-var routes = require('./routes');
-app.use('/', routes);
-// E :: Routing
 
 var query = require('./module/query-parser');
 query.parse();
@@ -35,14 +32,17 @@ query.parse();
 /* Custom Global Variable */
 global.avs = require('./module/logger');
 global.db = require('./module/connecter');
+global.session = require('./module/avsAuth');
 
-
-app.use(function(req, res, next){
-    avs.log('info', req._remoteAddress + " >> " + req.url);
-    next();
+// S :: Routing
+var routes = require('./routes');
+app.use('/', function(req,res, next){
+    session.setRequest(req);
+    next(routes);
 });
+// E :: Routing
 
-/// catch 404 and forward to error handler
+/// catch 404 and forward to erdror handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
