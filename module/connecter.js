@@ -22,13 +22,14 @@ getConn = function(){
 
 exports.select = function(sql, param, callback){
     var conn = getConn();
-    avs.log('debug', '[QUERY_SELECT] >> ' + sql);
+    avs.log('info', '[QUERY_SELECT] >> ' + sql);
     conn.query(sql, param, function(err, result){
         if(err) {
             result['flag'] = false;
-            avs.log('warn', '[ERROR_SELECT] >> ' + err);
-            //console.error('[ERROR_SQL_SELECT] >> ' + err);
-            callback(result);
+            avs.log('warn', '[SELECT_QUERY_ERROR] >> ' + err);
+            avs.log('info', '[SELECT_QUERY] >> ' + sql + ' [PARAM] >> ' + param);
+
+            callback(err);
         }
         else {
             result['flag'] = true;
@@ -39,16 +40,18 @@ exports.select = function(sql, param, callback){
 
 exports.execute = function(sql, param, callback){
     var conn = getConn();
-    avs.log('debug', '[QUERY_SELECT] >> ' + sql);
+    avs.log('info', '[QUERY_SELECT] >> ' + sql);
     conn.query(sql, param, function(err, result){
        if(err) {
-           avs.log('warn', '[ERROR_SELECT] >> ' + err);
+           avs.log('warn', '[EXCUTE_QUERY_ERROR] >> ' + err);
+           avs.log('info', '[EXCUTE_QUERY] >> ' + sql + ' [PARAM] >> ' + param);
            //console.error('[ERROR_SQL_EXCUTE] >> ' + err);
-           result['flag'] = false;
-           callback(result);
+           err['flag'] = false;
+           callback(err);
        }
        else {
-           result['flag'] = true;
+           avs.log('info', '[EXCUTE_QUERY] >> ' + sql + ' [PARAM] >> ' + param);
+           //result['flag'] = true;
            callback(result);
        }
     });

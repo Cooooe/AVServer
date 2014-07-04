@@ -5,6 +5,16 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 	<script src="/javascripts/jquery-2.1.1.min.js"></script>
 	  <script>
+          function join(){
+              $.post('/join.av',{USER_ID : 'yu', USER_PASS : '1111', MAIL_YN : 'Y'} , function(data){
+                  console.log(data);
+              });
+          }
+          function login(){
+              $.post('/login.av',{USER_ID : 'yu', USER_PASS : '1111'} , function(data){
+                  console.log(" >>>>> " + data);
+              });
+          }
 		  function test(){
 				$.post('/login.do',"" , function(data){
 					console.log(data);
@@ -25,6 +35,8 @@
   <body>
     <h1></h1>
     <p></p>
+    <input type="button" id="bt" onclick="join();" value="가입" />
+    <input type="button" id="bt" onclick="login();" value="로그인" />
   	<input type="button" id="bt" onclick="test();" value="setSession" />
     <input type="button" id="bt" onclick="test1();" value="getSession" />
     <input type="button" id="bt" onclick="test2();" value="distroySession" />

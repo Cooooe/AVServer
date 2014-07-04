@@ -20,8 +20,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 /* Session Test */
 var session_set = require('express-session');
-var redis = require("redis");
-var client = redis.createClient();
 app.use(session_set({
       secret: 'secret'
 }));

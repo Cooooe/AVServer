@@ -2,5 +2,11 @@
     <query id="join">
         INSERT INTO USERS(ACCOUNT, PASSWORD, REG_DATE, MAIL_YN, IP) VALUES(?, ?, NOW(), ?, ?)
     </query>
-    <query id="test1">test1111</query>
+    <query id="login">
+        SELECT CASE WHEN 1 > COUNT(*) THEN 'N'
+                    ELSE 'Y' END AS LOGIN_YN
+        FROM USERS
+        WHERE ACCOUNT = ?
+          AND PASSWORD = ?
+    </query>
 </querys>

@@ -10,7 +10,7 @@ router.post('/login.do', function(req, res) {
 });
 router.post('/login1.do', function(req, res) {
     //console.log(session.get('test'));
-    session.destroy();
+    //session.destroy();
     //console.log(session.get('test'));
 });
 router.post('/login2.do', function(req, res) {
