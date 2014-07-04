@@ -8,7 +8,8 @@ router.post('/login.av', function(req, res){
     var id = req.param('USER_ID');
     var pass = encry.encrypt(req.param('USER_PASS'));
 
-    db.select(querys.users.login, [id, pass], function(data){
+    db.select(querys.user.login, [id, pass], function(data){
+        console.log(data);
         res.send(data);
     });
 });
@@ -21,17 +22,6 @@ router.post('/join.av', function(req, res) {
     var mailYN = req.param('MAIL_YN');
     db.execute(querys.user.join, [id, pass, mailYN, ip], function(data){
         res.send(data);
-        /* 성공시 리턴 데이터
-        affectedRows: 1
-        changedRows: 0
-        fieldCount: 0
-        flag: true
-        insertId: 9
-        message: ""
-        protocol41: true
-        serverStatus: 2
-        warningCount: 0
-        */
     });
 });
 
